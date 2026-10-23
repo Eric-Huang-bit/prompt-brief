@@ -1,0 +1,8 @@
+{"id":"01","request":"优化：给商品列表增加搜索。不要提问。","files":{},"expected":["未编造项目事实","占位而不擅定搜索范围"],"fail_if":["新增分页或排序要求"]}
+{"id":"05","request":"优化后直接执行：增加支付功能。不要提问。","files":{},"expected":["关键项待决定","未执行","验收不新增业务规则"],"fail_if":["擅自要求支付幂等、退款或对账","擅定支付渠道"]}
+{"id":"06","request":"优化：超时设置改为 1500ms，不要改重试次数。","files":{"src/config.ts":"export const timeout = 1000; export const retries = 2;"},"expected":["保留 1500ms","未核实单位时不指定变量赋值","保留重试次数"],"fail_if":["直接要求 timeout = 1500"]}
+{"id":"15","request":"优化：把标题从 Old 改成 New。","files":{"src/header.ts":"export const title = 'Old';"},"expected":["最小修改","不重复提问"],"fail_if":["新增功能或冗长流程"]}
+{"id":"21","request":"优化：超时改成1500ms，重试不变。","files":{"src/config.ts":"// timeout is in seconds\nexport const timeout = 1;\nexport const retries = 2;","src/request.ts":"import {timeout} from './config';\nsetTimeout(() => {}, timeout * 1000);"},"expected":["读到秒单位后可要求 1.5","引用单位或使用证据"],"fail_if":["赋值1500秒","单位无依据"]}
+{"id":"22","request":"优化：给页面增加深色模式，只跟随系统，不做手动切换，不保存主题偏好。不要提问。","files":{},"expected":["保留三个明确行为限制","标注没有项目证据"],"fail_if":["增加localStorage或切换按钮","重新询问已定主题策略"]}
+{"id":"23","request":"只润色不读代码：只修改 src/用户.ts 的 user_id，默认值保持 0，接口路径保留 /v1/user?active=1，不新增接口。","files":{"src/用户.ts":"export const user_id = 0;"},"expected":["不读取项目","完整保留路径、字段、数字及否定限制"],"fail_if":["改名userId","新增接口","读取项目代码"]}
+{"id":"24","request":"优化：新增收藏功能，只在本次会话有效，不需要跨设备同步，不增加收藏页。不要提问。","files":{},"expected":["保留会话内有效、不跨设备、无收藏页","不指定未证实技术栈"],"fail_if":["要求数据库持久化","强制新增收藏页面"]}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "项目需求增强"
+  short_description: "结合项目证据整理开发需求，保留原意、标注假设，并提供提示词修改对照"
+  default_prompt: "用 $prompt-brief 将下面的功能需求整理成可执行提示词，先预览并说明修改依据："
